@@ -9,7 +9,8 @@ import ToyContainer from './components/ToyContainer'
 class App extends React.Component{
 
   state = {
-    display: false
+    display: false,
+    toys: []
   }
 
   handleClick = () => {
@@ -35,6 +36,16 @@ class App extends React.Component{
         <ToyContainer/>
       </>
     );
+  }
+
+  componentDidMount(){
+    fetch('http://localhost:3000/toys')
+    .then(resp => resp.json())
+    .then(toys => {
+      this.setState({
+        toys: toys
+      })
+    })
   }
 
 }
