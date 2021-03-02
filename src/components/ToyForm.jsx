@@ -13,21 +13,44 @@ class ToyForm extends Component {
     this.setState({
       name: event.target.value
     })
-    console.log(this.state.name)
   }
 
   handleUrl = (event) => {
     this.setState({
       imageUrl: event.target.value
     })
-    console.log(this.state.imageUrl)
+  }
 
+  onToySubmit = (e) => {
+    e.preventDefault()
+
+    const newToy = {
+      name: this.state.name,
+      image: this.state.imageUrl,
+      likes: 0
+    }
+    // console.log(JSON.stringify(newToy))
+
+    const reqObj = {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify(newToy)
+    }
+
+    fetch('http://localhost:3000/toys', reqObj)
+    .then(resp => resp.json())
+    .then(toy => {
+      this.props.addToy(toy)
+    })
   }
 
   render() {
     return (
       <div className="container">
-        <form className="add-toy-form">
+        <form onSubmit={this.onToySubmit} className="add-toy-form">
           <h3>Create a toy!</h3>
           <input onChange={this.handleName} value={this.state.name} type="text" name="name" placeholder="Enter a toy's name..." className="input-text"/>
           <br/>

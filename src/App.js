@@ -20,13 +20,20 @@ class App extends React.Component{
     })
   }
 
+  addToy = (toy) => {
+    const newArray = [toy, ...this.state.toys]
+    this.setState({
+      toys: newArray
+    })
+  }
+
   render(){
     return (
       <>
         <Header/>
         { this.state.display
             ?
-          <ToyForm/>
+          <ToyForm addToy={this.addToy} />
             :
           null
         }
