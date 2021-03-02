@@ -27,8 +27,12 @@ class App extends React.Component{
     })
   }
 
-  donateToy = (toy) => {
-    
+  donateToy = (id) => {
+    const newArray = this.state.toys.filter(toy => toy.id !== id)
+
+    this.setState({
+      toys: newArray
+    })
   }
 
   render(){
