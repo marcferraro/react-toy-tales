@@ -28,7 +28,7 @@ class App extends React.Component{
   }
 
   donateToy = (toy) => {
-    console.log('delete')
+    
   }
 
   render(){

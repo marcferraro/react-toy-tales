@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 
 class ToyCard extends Component {
 
+  handleDelete = () => {
+    const id = this.props.toy.id
+    fetch(`http://localhost:3000/toys/${id}`, {method: "DELETE"})
+    .then(resp => resp.json())
+    .then(toy => this.props.donateToy)
+  }
+
+
   render() {
     const { toy } = this.props
     return (
@@ -10,7 +18,7 @@ class ToyCard extends Component {
         <img src={toy.image} alt={toy.name} className="toy-avatar" />
         <p>{toy.likes} Likes </p>
         <button className="like-btn">Like {'<3'}</button>
-        <button onClick={this.props.donateToy} className="del-btn">Donate to GoodWill</button>
+        <button onClick={this.handleDelete} className="del-btn">Donate to GoodWill</button>
       </div>
     );
   }
