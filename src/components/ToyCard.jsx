@@ -6,7 +6,7 @@ class ToyCard extends Component {
     const id = this.props.toy.id
     fetch(`http://localhost:3000/toys/${id}`, {method: "DELETE"})
     .then(resp => resp.json())
-    .then(toy => this.props.donateToy)
+    .then(toy => this.props.donateToy(id))
   }
 
 
