@@ -27,6 +27,10 @@ class App extends React.Component{
     })
   }
 
+  donateToy = (toy) => {
+    console.log('delete')
+  }
+
   render(){
     return (
       <>
@@ -40,7 +44,7 @@ class App extends React.Component{
         <div className="buttonContainer">
           <button onClick={this.handleClick}> Add a Toy </button>
         </div>
-        <ToyContainer toys={this.state.toys}/>
+        <ToyContainer toys={this.state.toys} donateToy={this.donateToy}/>
       </>
     );
   }

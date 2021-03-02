@@ -10,7 +10,7 @@ class ToyCard extends Component {
         <img src={toy.image} alt={toy.name} className="toy-avatar" />
         <p>{toy.likes} Likes </p>
         <button className="like-btn">Like {'<3'}</button>
-        <button className="del-btn">Donate to GoodWill</button>
+        <button onClick={this.props.donateToy} className="del-btn">Donate to GoodWill</button>
       </div>
     );
   }
