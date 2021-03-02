@@ -35,6 +35,21 @@ class App extends React.Component{
     })
   }
 
+  likeToy = (id) => {
+    const newArray = this.state.toys.map(toy => {
+      if (toy.id === id){
+        toy.likes += 1
+        return toy
+      } else {
+        return toy
+      }
+    })
+
+    this.setState({
+      toys: newArray
+    })
+  }
+
   render(){
     return (
       <>
@@ -48,7 +63,7 @@ class App extends React.Component{
         <div className="buttonContainer">
           <button onClick={this.handleClick}> Add a Toy </button>
         </div>
-        <ToyContainer toys={this.state.toys} donateToy={this.donateToy}/>
+        <ToyContainer toys={this.state.toys} donateToy={this.donateToy} likeToy={this.likeToy}/>
       </>
     );
   }

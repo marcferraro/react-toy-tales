@@ -40,19 +40,25 @@
       "id": 7,
       "name": "Hamm",
       "image": "https://cdn140.picsart.com/244090226021212.png?r1024x1024",
-      "likes": 0
+      "likes": 3
     },
     {
       "id": 8,
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
-      "likes": -2
+      "likes": 5
     },
     {
       "name": "Megatron",
       "image": "https://blenderartists.org/uploads/default/original/3X/5/6/5651642813cf964e6933770afce658818bcfa428.jpg",
-      "likes": 0,
+      "likes": 4,
       "id": 9
+    },
+    {
+      "name": "Babyface",
+      "image": "https://static.wikia.nocookie.net/pixar/images/6/60/Babyface1.jpg/revision/latest/top-crop/width/300/height/300?cb=20191229044937",
+      "likes": 7,
+      "id": 10
     }
   ]
 }
